@@ -1,0 +1,36 @@
+#background{
+    -fx-background-image: url("back.jpg");
+}
+
+#rectPane {
+    -fx-background-image: url("display.jpg");
+}
+
+#rect{
+    -fx-fill: transparent;
+}
+
+.button{
+    -fx-border-color: rgb(241, 245, 249);
+    -fx-effect: dropshadow(two-pass-box, rgba(135, 151, 170,1), 2, 1, 0, 0);
+}
+
+.button-btn{
+    -fx-background-image: url("btn.jpg");
+}
+
+.button-operator{
+    -fx-background-image: url("operator.jpg");
+}
+
+.button-equal{
+    -fx-background-image: url("equal.jpg");
+}
+
+.button-number{
+    -fx-background-image: url("number.jpg");
+}
+
+.button-zero{
+    -fx-background-image: url("zero.jpg");
+}

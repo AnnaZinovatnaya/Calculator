@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:id="background" maxHeight="275.0" maxWidth="205.0" minHeight="275.0" minWidth="205.0" prefHeight="275.0" prefWidth="205.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Calculator.CalcController">
+   <children>
+      <VBox onKeyPressed="#keyPressed" prefHeight="285.0" prefWidth="215.0">
+         <children>
+            <MenuBar maxHeight="20.0" maxWidth="215.0" minHeight="19.0" prefHeight="19.0" prefWidth="215.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Вид">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Правка">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Справка">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <Blend />
+               </effect>
+               <padding>
+                  <Insets top="-3.0" />
+               </padding>
+            </MenuBar>
+            <BorderPane prefHeight="269.0" prefWidth="215.0">
+               <center>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <BorderPane.margin>
+                        <Insets bottom="11.0" left="11.0" right="11.0" top="11.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <StackPane fx:id="rectPane" alignment="CENTER">
+                           <children>
+                              <Rectangle fx:id="rect" height="50" stroke="GRAY" width="194" />
+                              <VBox alignment="BOTTOM_RIGHT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="51.0" prefWidth="195.0" spacing="5.0">
+                                 <children>
+                                 <Text fx:id="calculations" text="" textAlignment="RIGHT" wrappingWidth="185.0">
+                                    <font>
+                                       <Font name="Consolas" size="13.0" />
+                                    </font>
+                                 </Text>
+                                    <HBox alignment="BOTTOM_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="20.0" prefWidth="190.0" spacing="3.0">
+                                       <children>
+                                          <Text fx:id="m" text="" wrappingWidth="15.0">
+                                             <font>
+                                                <Font name="Consolas" size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="output" text="0" textAlignment="RIGHT" wrappingWidth="165.0">
+                                             <font>
+                                                <Font name="Consolas" size="20.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="0.0" left="5.0" right="0.0" />
+                                       </padding>
+                                       <opaqueInsets>
+                                          <Insets left="5.0" />
+                                       </opaqueInsets>
+                                    </HBox>
+                                 </children>
+                                 <padding>
+                                    <Insets bottom="5.0" right="5.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </StackPane>
+
+                        <GridPane hgap="6.0" maxHeight="128.0" minHeight="128.0" prefHeight="128.0" vgap="5.0">
+                          <columnConstraints>
+                              <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="34.0" minWidth="34.0" prefWidth="34.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="34.0" minWidth="34.0" prefWidth="34.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="34.0" minWidth="34.0" prefWidth="34.0" />
+                            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="34.0" minWidth="34.0" prefWidth="34.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="34.0" minWidth="34.0" prefWidth="34.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="27.0" minHeight="27.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Button maxWidth="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#storagePressed" prefHeight="24.0" prefWidth="32.0" styleClass="button-btn" text="MC">
+                                 <font>
+                                    <Font name="Segoe UI" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxWidth="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#storagePressed" prefHeight="24.0" prefWidth="32.0" styleClass="button-btn" text="MR" GridPane.columnIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxWidth="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#storagePressed" prefHeight="24.0" prefWidth="32.0" styleClass="button-btn" text="MS" GridPane.columnIndex="2">
+                                 <font>
+                                    <Font name="Segoe UI" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxWidth="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#storagePressed" prefHeight="24.0" prefWidth="32.0" styleClass="button-btn" text="M+" GridPane.columnIndex="3">
+                                 <font>
+                                    <Font name="Segoe UI" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#backspacePressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="←" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#clearLastInputPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="CE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#clearCalculationsPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="C" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#plusMinusPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="±" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button graphicTextGap="0.0" maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="7" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#operation1Pressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="/" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="4" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="6" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#operation1Pressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="*" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxWidth="32.0" minWidth="32.0" mnemonicParsing="false" onAction="#storagePressed" prefHeight="24.0" prefWidth="32.0" styleClass="button-btn" text="M-" GridPane.columnIndex="4">
+                                 <font>
+                                    <Font name="Segoe UI" size="13.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#sqrtPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="√" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#percentPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="\%" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                              <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#reciprocPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="1/x" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                           </children>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </GridPane>
+                        <HBox maxHeight="64.0" minHeight="64.0" prefHeight="64.0" prefWidth="193.0" spacing="6.0">
+                           <children>
+                              <VBox maxHeight="59.0" minHeight="59.0" prefHeight="59.0" prefWidth="100.0" spacing="5.0">
+                                 <children>
+                                    <HBox prefHeight="27.0" prefWidth="200.0" spacing="6.0">
+                                       <children>
+                                          <Button maxHeight="24.0" maxWidth="34.0" minHeight="24.0" minWidth="34.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="1">
+                                             <font>
+                                                <Font name="Segoe UI" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="-1.0" />
+                                             </padding>
+                                          </Button>
+                                          <Button maxHeight="24.0" minHeight="24.0" minWidth="34.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="2">
+                                             <font>
+                                                <Font name="Segoe UI" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="-1.0" />
+                                             </padding>
+                                          </Button>
+                                          <Button maxHeight="24.0" minHeight="24.0" minWidth="34.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text="3">
+                                             <font>
+                                                <Font name="Segoe UI" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="-1.0" />
+                                             </padding>
+                                          </Button>
+                                          <Button maxHeight="24.0" minHeight="24.0" minWidth="34.0" mnemonicParsing="false" onAction="#operation1Pressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="-">
+                                             <font>
+                                                <Font name="Segoe UI" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="-1.0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <HBox maxWidth="154.0" minWidth="154.0" prefHeight="27.0" prefWidth="154.0" spacing="6.0">
+                                       <children>
+                                          <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="74.0" styleClass="button-zero" text="0">
+                                             <font>
+                                                <Font name="Segoe UI" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="-1.0" />
+                                             </padding>
+                                          </Button>
+                                          <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#numberPressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-number" text=".">
+                                             <font>
+                                                <Font name="Segoe UI" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="-1.0" />
+                                             </padding>
+                                          </Button>
+                                          <Button maxHeight="24.0" minHeight="24.0" mnemonicParsing="false" onAction="#operation1Pressed" prefHeight="24.0" prefWidth="34.0" styleClass="button-operator" text="+">
+                                             <font>
+                                                <Font name="Segoe UI" size="14.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets top="-1.0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <Button maxWidth="34.0" minWidth="34.0" mnemonicParsing="false" onAction="#equalPressed" prefHeight="56.0" prefWidth="34.0" styleClass="button-equal" text="=">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Segoe UI" size="14.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets top="-1.0" />
+                                 </padding>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets top="5.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </VBox>
+   </children>
+</Pane>
